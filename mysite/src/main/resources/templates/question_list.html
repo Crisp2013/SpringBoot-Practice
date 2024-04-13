@@ -1,0 +1,17 @@
+<table>
+    <thead>
+        <tr>
+            <th>제목</th>
+            <th>작성일시</th>
+        </tr>
+    </thead>
+    <!-- th:if="${question != null}" 분기문 작성 -->
+    <tbody>
+        <!-- th:each: 파이선의 for in -->
+        <tr th:each="question : ${questionList}">
+            <!-- th.text: 텍스트출력 -->
+            <td th:text="${question.subject}"></td>
+            <td th:text="${question.createDate}"></td>
+        </tr>
+    </tbody>
+</table>

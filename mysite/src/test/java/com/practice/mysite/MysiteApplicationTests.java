@@ -11,6 +11,10 @@ import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.practice.mysite.question.Question;
+import com.practice.mysite.question.QuestionRepository;
 
 //DB에 주입이 안되는데 JUnit이 주입이 되는게 비정상적인 상황인가?
 //DB가 2개가 됨-> 왜???? 테스트용 DB가 따로 생성이 되었다.

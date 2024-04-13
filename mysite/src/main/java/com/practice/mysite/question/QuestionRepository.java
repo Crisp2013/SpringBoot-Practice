@@ -1,4 +1,4 @@
-package com.practice.mysite;
+package com.practice.mysite.question;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

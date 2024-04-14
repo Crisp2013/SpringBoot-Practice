@@ -12,11 +12,11 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class QuestionController {
     
-    private final QuestionRepository questionRepository;
+    private final QuestionService questionService;
     
     @GetMapping("/question/list")
     public String list(Model model){//모델객체는 알아서 생김, 탬플릿에 전달해주는 것, django에서는 context
-        List<Question> questionList = this.questionRepository.findAll();
+        List<Question> questionList = this.questionService.getList();
         model.addAttribute("questionList",questionList);
         return "question_list";
     }

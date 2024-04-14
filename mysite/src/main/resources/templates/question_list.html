@@ -10,7 +10,10 @@
         <!-- th:each: 파이선의 for in -->
         <tr th:each="question : ${questionList}">
             <!-- th.text: 텍스트출력 -->
-            <td th:text="${question.subject}"></td>
+            <td>
+                <!-- |: 문자열 표시? 문자열과 값 더할떄 사용 -->
+                <a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a>
+            </td>
             <td th:text="${question.createDate}"></td>
         </tr>
     </tbody>

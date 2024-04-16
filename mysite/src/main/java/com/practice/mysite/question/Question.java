@@ -3,6 +3,8 @@ package com.practice.mysite.question;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.validation.annotation.Validated;
+
 import com.practice.mysite.answer.Answer;
 
 import jakarta.persistence.CascadeType;
@@ -18,6 +20,7 @@ import lombok.Setter;
 @Entity //엔티티(django의 모델)이라는 표시
 @Getter
 @Setter //왠만해서 setter메서드를 사용하지 않기를 권장, 메서드를 새로 작성하는게 좋음
+@Validated
 public class Question {
     @Id //기본키
     @GeneratedValue(strategy = GenerationType.IDENTITY )//고유한 번호 생성(유일함)

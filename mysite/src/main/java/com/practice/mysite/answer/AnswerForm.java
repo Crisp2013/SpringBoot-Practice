@@ -1,4 +1,4 @@
-package com.practice.mysite.question;
+package com.practice.mysite.answer;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;

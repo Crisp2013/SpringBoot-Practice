@@ -2,6 +2,8 @@ package com.practice.mysite.answer;
 
 import java.time.LocalDateTime;
 
+import org.springframework.validation.annotation.Validated;
+
 import com.practice.mysite.question.Question;
 
 import jakarta.persistence.Column;
@@ -16,6 +18,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Validated
 public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -2,6 +2,7 @@ package com.practice.mysite.question;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -26,9 +27,9 @@ public class QuestionController {
     private final QuestionService questionService;
     
     @GetMapping("/list")
-    public String list(Model model){//모델객체는 알아서 생김, 탬플릿에 전달해주는 것, django에서는 context
-        List<Question> questionList = this.questionService.getList();
-        model.addAttribute("questionList",questionList);
+    public String list(Model model, @RequestParam(value="page", defaultValue ="0") int page){//모델객체는 알아서 생김, 탬플릿에 전달해주는 것, django에서는 context
+        Page<Question> paging = this.questionService.getList(page);
+        model.addAttribute("paging",paging);
         return "question_list";
     }
     @GetMapping("/detail/{id}")

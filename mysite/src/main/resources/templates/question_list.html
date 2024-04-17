@@ -11,7 +11,7 @@
         <!-- th:if="${question != null}" 분기문 작성 -->
         <tbody>
             <!-- th:each: 파이선의 for in -->
-            <tr th:each="question, loop : ${questionList}">
+            <tr th:each="question, loop : ${paging}">
                 <!-- th.text: 텍스트출력 -->
                 <td th:text="${loop.count}"></td>
                 <td>

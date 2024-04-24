@@ -13,7 +13,7 @@
             <!-- th:each: 파이선의 for in -->
             <tr th:each="question, loop : ${paging}">
                 <!-- th.text: 텍스트출력 -->
-                <td th:text="${loop.count}"></td>
+                <td th:text="${paging.getTotalElements - (paging.number * paging.size) - loop.index}"></td>
                 <td>
                     <!-- |: 문자열 표시? 문자열과 값 더할떄 사용 -->
                     <a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a>
